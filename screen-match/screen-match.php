@@ -58,3 +58,14 @@ $posicaoDoisPontos = strpos($filme['nome'], ':');
 var_dump($posicaoDoisPontos);
 
 var_dump(substr($filme['nome'], 0, $posicaoDoisPontos));
+
+
+$filmeComoStringJson = json_encode($filme);
+
+// file_put_contents(__DIR__ . '/filme.json', $filmeComoStringJson);
+
+$conteudoJson = file_get_contents(__DIR__ . '/filme.json');
+
+$filmeArray = json_decode($conteudoJson, true);
+
+print_r($filmeArray);
